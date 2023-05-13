@@ -1,17 +1,17 @@
 <h1><%= @place["name"] %></h1>
 
-<h2><%= @company["city"] %>, <%= @company["state"] %></h2>
-
-<h3>Contacts</h3>
+<h2>Posts</h2>
 
 <ul>
-  <% for contact in @contacts %>
-    <li><%= contact["last_name"] %>, <%= contact["first_name"] %></li>
+  <% for post in @posts %>
+    <li><%= post["title"] %></li>
+    <li><%= post["posted_on"] %></li>
+    <li><%= post["description"]%></li>
   <% end %>
 </ul>
 
 <p>
-  <a href="/contacts/new?company_id=<%= @company["id"] %>">New Contact</a>
+  <a href="/posts/new?place_id=<%= @place["id"] %>">New Post</a>
 </p>
 
-<p><a href="/companies">Back to All Companies</a></p>
+<p><a href="/places">Back to All Places</a></p>
